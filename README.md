@@ -24,7 +24,7 @@ hooks for clients that install plugins from a personal marketplace.
 ### Claude Code
 
 ```text
-/plugin marketplace add erkandogan/sodium
+/plugin marketplace add https://github.com/erkandogan/sodium.git
 /plugin install sodium@sodium
 ```
 
