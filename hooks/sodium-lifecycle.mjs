@@ -100,6 +100,7 @@ export function sessionStartOutput(input, snapshot, orca) {
     'At task start call sodium_context_fetch with purpose, projectId, branch, worktreeId, and fileScope.',
     'Before asking the user to repeat prior context, call sodium_recall.',
     'Before a task switch or final response, record durable decisions and one unfinished handoff with sodium_remember.',
+    'When replacing prior memory, use sodium_update or sodium_invalidate instead of adding a contradictory duplicate.',
     'Never store secrets, raw transcripts, or a log of every edit.',
   ].join('\n');
   return {
@@ -126,6 +127,7 @@ export function stopOutput(input, snapshot, state, orca) {
     `Call sodium_remember for projectId=${snapshot.projectId || '(resolve with sodium_project_list)'}, branch=${snapshot.branch || '(unknown)'}, worktreeId=${orca.id || '(none)'}.`,
     `Use related_files from: ${fileScope}.`,
     'Capture only decisions, constraints, completed outcome, and unfinished next steps; do not capture the transcript or routine edits.',
+    'If this replaces a recalled record, use sodium_update or sodium_invalidate so stale memory is hidden.',
     'After the memory call, return the user-facing final response.',
   ].join(' ');
   return {
