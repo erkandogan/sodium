@@ -1,5 +1,6 @@
 {
   "name": "sodium",
+  "description": "Sodium's tool-agnostic developer memory companion and lifecycle workflows.",
   "owner": {
     "name": "Sodium"
   },
