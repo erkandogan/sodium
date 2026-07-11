@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sodium": {
+      "type": "http",
+      "url": "https://sodium.dev/mcp"
+    }
+  }
+}

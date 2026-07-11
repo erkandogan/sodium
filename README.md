@@ -2,7 +2,7 @@
 
 Sodium is a durable project brain shared by your coding agents. Decisions,
 scope, handoffs, notes, and file-aware context survive fresh sessions,
-worktrees, and switches between Claude Code, Codex, and other MCP clients.
+worktrees, and switches between Claude Code, Codex, Cursor, and custom agents.
 
 This repository is the public, secret-free client distribution. The hosted
 brain lives at `https://sodium.dev/mcp`; there is no local daemon and no token
@@ -33,6 +33,19 @@ Or connect only the MCP:
 ```sh
 claude mcp add --transport http sodium https://sodium.dev/mcp
 ```
+
+### Cursor Agent
+
+Clone this repository or copy `.cursor/mcp.json` into your project, then run:
+
+```sh
+cursor-agent mcp enable sodium
+cursor-agent mcp login sodium
+cursor-agent mcp list-tools sodium
+```
+
+Cursor opens Sodium's browser OAuth flow and returns through its loopback
+callback. No local MCP proxy or pasted bearer token is required.
 
 ### Any MCP client
 
@@ -67,15 +80,17 @@ durable knowledge, not a surveillance log of every edit.
 2. Use `sodium_recall` before asking the user to repeat a prior decision.
 3. Record decisions when they become durable, with rationale and related
    files—not every implementation detail.
-4. Before switching tasks, record one concise handoff with the completed
+4. Update or invalidate prior decisions when new work contradicts them.
+5. Before switching tasks, record one concise handoff with the completed
    outcome, blockers, and next step.
-5. Rate only memories you actually relied on with `sodium_feedback`.
+6. Rate only memories you actually relied on with `sodium_feedback`.
 
 ## Repository contents
 
 - `.mcp.json` — public remote MCP configuration.
 - `.claude-plugin/` — Claude Code plugin and marketplace manifests.
 - `.codex-plugin/` — Codex plugin manifest.
+- `.cursor/mcp.json` — Cursor project configuration.
 - `.agents/plugins/marketplace.json` — Codex marketplace metadata.
 - `hooks/` — shared lifecycle checkpoint adapter and tests.
 - `skills/` and `agents/` — reusable workflows and personas.
