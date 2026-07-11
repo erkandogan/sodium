@@ -1,0 +1,8 @@
+{
+  "name": "sodium",
+  "version": "2.1.0",
+  "description": "Sodium: a shared team brain (persistent memory), agent personas, and skills for Claude Code — backed by a remote hub MCP with browser OAuth. No local daemon, no token pasting.",
+  "author": {
+    "name": "Sodium"
+  }
+}

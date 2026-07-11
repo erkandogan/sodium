@@ -1,0 +1,13 @@
+{
+  "name": "sodium",
+  "owner": {
+    "name": "Sodium"
+  },
+  "plugins": [
+    {
+      "name": "sodium",
+      "source": "./",
+      "description": "Durable project memory and lifecycle checkpoints shared across coding agents."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sodium",
+  "version": "2.1.0",
+  "description": "Shared project memory and lifecycle checkpoints for Codex, Claude Code, and Orca worktrees.",
+  "author": {
+    "name": "Sodium",
+    "url": "https://sodium.dev"
+  },
+  "homepage": "https://sodium.dev",
+  "repository": "https://github.com/erkandogan/sodium",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sodium",
+    "shortDescription": "Shared memory for every coding agent.",
+    "longDescription": "Connect Codex to the Sodium remote MCP brain and preserve project decisions across fresh sessions, tasks, and Orca worktrees.",
+    "developerName": "Sodium",
+    "category": "Productivity",
+    "capabilities": ["MCP", "Hooks", "Skills"],
+    "defaultPrompt": "Orient to this project with Sodium before editing and checkpoint durable decisions before finishing."
+  },
+  "mcpServers": "./.mcp.json"
+}
