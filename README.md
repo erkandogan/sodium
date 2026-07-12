@@ -108,6 +108,9 @@ durable knowledge, not a surveillance log of every edit.
 8. Run `sodium_health` periodically to find stale handoffs, missing project or
    source anchors, and exact duplicates. Resolve reviewed duplicates with
    `sodium_merge`; it links history without rewriting the canonical target.
+   Use the `sodium_freshness_review` prompt for an evidence-backed project
+   review; it proposes lifecycle actions but requires approval before retiring
+   durable decisions or ideas.
 
 The web brain includes a capture inbox, semantic search, revision-safe edit /
 invalidate / duplicate controls, actionable memory health, and a portable
