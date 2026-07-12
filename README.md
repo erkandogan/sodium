@@ -108,6 +108,9 @@ durable knowledge, not a surveillance log of every edit.
 The web brain includes a capture inbox, semantic search, revision-safe edit /
 invalidate controls, and a portable JSONL export. Export contains source
 records and provenance—not embedding vectors or another user's private data.
+Every export ends with a `{"export":{"complete":true,"rows":N}}` trailer line;
+if the last line is missing or reports `complete: false`, the download was
+truncated and should be retried.
 
 ## Repository contents
 
