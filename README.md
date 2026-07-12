@@ -110,7 +110,8 @@ durable knowledge, not a surveillance log of every edit.
    `sodium_merge`; it links history without rewriting the canonical target.
    Use the `sodium_freshness_review` prompt for an evidence-backed project
    review; it proposes lifecycle actions but requires approval before retiring
-   durable decisions or ideas.
+   durable decisions or ideas. Supersede stale direction with an active current
+   decision; use pure invalidation only when no successor should remain.
 
 The web brain includes a capture inbox, semantic search, revision-safe edit /
 invalidate / duplicate controls, actionable memory health, and a portable
