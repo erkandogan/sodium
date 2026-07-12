@@ -84,6 +84,12 @@ durable knowledge, not a surveillance log of every edit.
 5. Before switching tasks, record one concise handoff with the completed
    outcome, blockers, and next step.
 6. Rate only memories you actually relied on with `sodium_feedback`.
+7. Use `sodium_explain` when a surprising memory ranks highly; it reports the
+   observable ranking signals and Git provenance without inventing a reason.
+
+The web brain includes a capture inbox, semantic search, revision-safe edit /
+invalidate controls, and a portable JSONL export. Export contains source
+records and provenance—not embedding vectors or another user's private data.
 
 ## Repository contents
 
