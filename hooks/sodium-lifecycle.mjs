@@ -97,7 +97,7 @@ export function sessionStartOutput(input, snapshot, orca) {
     `Branch: ${snapshot.branch || '(detached or unknown)'}`,
     `Orca worktree: ${orca.id || '(not running in an Orca worktree)'}`,
     `Current changed files: ${files}`,
-    'At task start call sodium_context_fetch with purpose, projectId, branch, worktreeId, and fileScope.',
+    'At task start call sodium_context_fetch with purpose, projectId, branch, worktreeId, fileScope, and responseMode=compact.',
     'Before asking the user to repeat prior context, call sodium_recall.',
     'Before a task switch or final response, record durable decisions and one unfinished handoff with sodium_remember.',
     'When replacing prior memory, use sodium_update or sodium_invalidate instead of adding a contradictory duplicate.',

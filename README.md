@@ -94,7 +94,8 @@ durable knowledge, not a surveillance log of every edit.
 ## Recommended workflow
 
 1. At task start, call `sodium_context_fetch` with the project, purpose,
-   branch, worktree, and expected files.
+   branch, worktree, expected files, and `responseMode=compact` to avoid the
+   deprecated compatibility mirror.
 2. Use `sodium_recall` before asking the user to repeat a prior decision.
 3. Record decisions when they become durable, with rationale and related
    files—not every implementation detail.
@@ -104,10 +105,14 @@ durable knowledge, not a surveillance log of every edit.
 6. Rate only memories you actually relied on with `sodium_feedback`.
 7. Use `sodium_explain` when a surprising memory ranks highly; it reports the
    observable ranking signals and Git provenance without inventing a reason.
+8. Run `sodium_health` periodically to find stale handoffs, missing project or
+   source anchors, and exact duplicates. Resolve reviewed duplicates with
+   `sodium_merge`; it links history without rewriting the canonical target.
 
 The web brain includes a capture inbox, semantic search, revision-safe edit /
-invalidate controls, and a portable JSONL export. Export contains source
-records and provenance—not embedding vectors or another user's private data.
+invalidate / duplicate controls, actionable memory health, and a portable
+JSONL export. Export contains source records and provenance—not embedding
+vectors or another user's private data.
 Every export ends with a `{"export":{"complete":true,"rows":N}}` trailer line;
 if the last line is missing or reports `complete: false`, the download was
 truncated and should be retried.
