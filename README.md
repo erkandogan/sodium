@@ -58,6 +58,24 @@ https://sodium.dev/mcp
 The endpoint advertises its OAuth server. Do not create or paste a long-lived
 token into project configuration.
 
+### Optional universal CLI
+
+Download the checksummed binary for Linux, macOS, or Windows from the
+[public releases](https://github.com/erkandogan/sodium/releases/latest). The
+CLI is optional—the remote MCP works without it—but provides the same
+lifecycle on tools that do not run plugin hooks:
+
+```sh
+sodium init .
+sodium login
+sodium start
+sodium checkpoint "Finished the auth migration; dashboard verification remains"
+```
+
+`sodium init` safely merges Claude, Codex, and Cursor project configuration,
+adds bounded `AGENTS.md` guidance, and installs non-blocking Git checkpoints.
+OAuth credentials stay in the user's private config directory, never the repo.
+
 ## What the plugin adds
 
 - Project-scoped recall and warm context before an agent asks you to repeat
